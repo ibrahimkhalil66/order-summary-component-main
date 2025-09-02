@@ -1,0 +1,222 @@
+:root {
+  /* *!Colors */
+  --clr-primary-100: hsl(225, 100%, 94%);
+  --clr-primary-700: hsl(245, 75%, 52%);
+
+  --clr-neutral-50: hsl(225, 100%, 98%);
+  --clr-neutral-600: hsl(224, 23%, 55%);
+  --clr-neutral-950: hsl(223, 47%, 23%);
+
+  --ff-base: "Red Hat Display", sans-serif;
+
+  --fw-small: 500 ;
+  --fw-regular: 700;
+  --fw-bold: 900;
+}
+
+/* 1. Use a more-intuitive box-sizing model */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+* {
+  margin: 0;
+}
+
+/* 3. Enable keyword animations */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    interpolate-size: allow-keywords;
+  }
+}
+
+body {
+  /* 4. Add accessible line-height */
+  line-height: 1.7;
+  /* 5. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 6. Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 7. Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* 8. Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* 9. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+  line-height: 1;
+}
+
+
+/* *! Body Styling */
+
+body {
+  font-family: var(--ff-base);
+  font-weight: var(--fw-small);
+  color: var(--clr-neutral-600);
+  background-color: var(--clr-primary-100);
+  display: grid;
+  align-items: center;
+  place-content: center;
+  margin: 3rem 1.4rem;
+}
+
+.container {
+  --border-redius: 20px;
+
+  display: grid;
+  gap: 1rem;
+  justify-items: center;
+  background-color: var(--clr-neutral-50);
+  border-radius: var(--border-redius);
+  overflow: hidden;
+  box-shadow: 0px 0px 30px var(--clr-neutral-600);
+  max-width: 400px;
+}
+
+.content {
+  padding: 1rem;
+  display: grid;
+  gap: 1.3rem;
+  width: 100%;
+  justify-items: center;
+}
+
+
+
+/* *! Buttons */
+
+.btn {
+  padding: .5rem 4rem;
+  color: var(--clr-neutral-50);
+  font-weight: 800;
+  background-color: var(--clr-primary-700);
+  border: 1px solid var(--clr-primary-700);
+  border-radius: 10px;
+  cursor: pointer;
+
+}
+
+.btn:hover {
+  background-color: white;
+  color: var(--clr-primary-700);
+  box-shadow: 0px 0px 10px var(--clr-primary-700);
+}
+
+.cancel-btn {
+  width: 100%;
+  padding: .5rem;
+  color: var(--clr-neutral-600) ;
+  font-weight: 800;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: -.5rem;
+  margin-bottom: 1.4rem;
+}
+.cancel-btn:hover {
+  color: var(--clr-neutral-950);
+}
+
+h1 {
+  color: var(--clr-neutral-950);
+  font-weight: var(--fw-bold);
+  margin-top: 1rem;
+  font-size: 1.5rem;
+}
+
+.para {
+  display: block;
+  justify-self: center;
+  width: 90%;
+  text-align: center;
+  font-weight: 600;
+}
+
+.plan-div {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+
+  div {
+    margin-left: -.9rem;
+  }
+
+  .Annual-para {
+    color: var(--clr-neutral-950);
+    font-weight: var(--fw-bold);
+  }
+
+  p {
+    font-size: .9rem;
+  }
+
+  a {
+    color: var(--clr-primary-700);
+    font-weight: var(--fw-bold);
+    font-size: .9rem;
+  }
+  a:hover {
+    text-decoration: none;
+  }
+}
+
+@media (min-width : 500px) {
+  body {
+    background-image: url(/images/pattern-background-desktop.svg);
+    background-repeat: no-repeat;
+  }
+ 
+  .btn {
+    padding: .5rem 6rem;
+    margin-top: 1.5rem;
+  }
+
+  .plan-div {
+    display: flex;
+    gap: 4rem;
+    margin-top: 1.5rem;
+    
+    div {
+      margin-left: -2.5rem;
+      margin-right: 1.5rem;
+    }
+  }
+}
